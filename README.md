@@ -1,27 +1,32 @@
-# ShowcasedList
+To run the application run ng serve in terminal.
+To run all tests run ng test in terminal.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+Small web application that lets manage the list of showcased works for a digital worker.
+An entry can be hidden from the portfolio and can have a link to its customer's website:
 
-## Development server
+1. UI/UX design: Design the user interface and user experience of the application to make it visually appealing and easy to use.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Data Modeling: Define the data structure and relationships for the portfolio entries.
 
-## Code scaffolding
+3. CRUD (Create, Read, Update, Delete) operations: Implement functionality for adding, editing, and removing entries from the portfolio.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. Portfolio display: Develop the functionality to display the portfolio entries in a list or grid format.
 
-## Build
+5. Image Upload: Implement functionality to allow the user to upload images for each portfolio entry.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+6. Hide/Unhide entries: Implement functionality to hide or unhide a portfolio entry from being displayed.
 
-## Running unit tests
+7. Customer link: Implement functionality to include a link to the customer's website for each portfolio entry.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+8. Responsiveness: Ensure the application is responsive and looks good on different devices and screen sizes.
 
-## Running end-to-end tests
+9. Testing: Perform thorough testing of the application to ensure it is functioning as expected.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+In short, the following tasks are needed to make your entry valid:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Use Angular CLI to create a new project and define at least a component.
+2. Create a model to represent a showcased work's details.
+3. Display the list of works using an ngFor directive.
+4. Add the functionality to add a new work using a form.
+5. Add the functionality to edit an existing work.
+6. Add the functionality to delete an existing work.

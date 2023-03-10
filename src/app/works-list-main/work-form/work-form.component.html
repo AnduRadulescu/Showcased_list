@@ -1,0 +1,35 @@
+
+<div class="modal-header">
+  <h6 class="modal-title">
+    <i class="far fa-plus-square"></i>Add work
+  </h6>
+  <button type="button" class="close" aria-label="Close" (click)="closeAddWork()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="workForm">
+    <div class="form-group mb-1">
+      <label>*Name</label>
+      <input type="text" class="form-control" required placeholder="Name" formControlName="name"/>
+    </div>
+    <div class="form-group mb-1">
+      <label>*Link</label>
+      <input type="text" class="form-control" required placeholder="Link of customers website " formControlName="link"/>
+    </div>
+    <div class="form-group mb-1">
+      <label>*Description</label>
+      <textarea rows="5" class="form-control" required placeholder="Description" formControlName="description"></textarea>
+    </div>
+    <div class="form-group mb-1">
+      <div [innerHtml]='this.imageUpload.message' *ngIf="this.imageUpload.message" style="color: red;"></div>
+      <div><img [src]="this.imageUpload.url ?? work?.img" width="200" height="200" *ngIf="this.imageUpload.url || work?.img"></div>
+      <input type="file" (change)="this.imageUpload.selectFile($event)" formControlName="img">
+    </div>
+    <div class="text-center">
+      <button *ngIf="!work" type="submit" [disabled]="workForm.invalid" class="btn btn-success me-2" (click)="addWork()" >Save </button>
+      <button *ngIf="work" type="submit" [disabled]="workForm.invalid" class="btn btn-primary me-2" (click)="editWork()" >Edit </button>
+      <button class="btn btn-secondary" (click)="closeAddWork()">Cancel </button>
+    </div>
+  </form>
+</div>

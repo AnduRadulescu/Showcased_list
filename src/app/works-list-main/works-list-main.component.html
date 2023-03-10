@@ -1,0 +1,35 @@
+<div class="text-center mt-3">
+  <label>Example digital workers</label>
+</div>
+<div class="mb-2 ms-5">
+  <button type="button" class="btn btn-success me-2" (click)="addWork()">Add work</button>
+  <button type="button" class="btn btn-warning me-2" (click)="hideWorks()">Hide works</button>
+  <button type="button" class="btn btn-dark" (click)="unHideWorks()">Unhide works</button>
+</div>
+
+<div class="mb-3 ms-5 me-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="grid-works">
+        <div #works class="mt-2" *ngFor="let work of works$ | async; let i = index" >
+          <div class="card p-3 mb-2 work" [ngClass]="returnClassBasedOnWorkSelected(i, 'selected-effect', '')">
+            <div class="d-flex justify-content-between">
+              <div class="">{{work.name | uppercase}}</div>
+              <div class="buttons">
+                <button class="btn btn-sm btn-primary me-1" (click)="edit(work, i)"><i class="bi bi-pencil-square" ></i></button>
+                <button class="btn btn-sm btn-danger me-1" (click)="deleteWork(i)"><i class="bi bi-trash3"></i></button>
+                <button class="btn btn-sm btn-warning" (click)="selectForHideWorks(i)"><i [ngClass]="returnClassBasedOnWorkSelected(i, 'bi bi-eye', 'bi bi-eye-slash')"></i></button>
+              </div>
+            </div>
+            <hr>
+            <a [href]="'https://' + work.link">{{work.link}}</a>
+            <div>{{work.description}}</div>
+            <br>
+            <div><img *ngIf="work.img" [src]="work.img" width="100" height="100" alt="Please add a image"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

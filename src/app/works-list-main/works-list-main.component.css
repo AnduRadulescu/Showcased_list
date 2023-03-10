@@ -1,0 +1,27 @@
+.grid-works{
+  display: grid;
+  gap: .2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.work{
+  height: 220px;
+  overflow-y: auto;
+}
+
+
+.buttons{
+  min-width: 105px;
+}
+
+.hideWork{
+  display: none;
+}
+
+.selected-effect{
+  background-color: gainsboro;
+}
+
+label{
+  font-size: larger;
+}
